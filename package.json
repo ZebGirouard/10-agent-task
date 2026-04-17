@@ -1,0 +1,14 @@
+{
+  "name": "10-agent-task",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node tests/notes.test.mjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
