@@ -31,7 +31,18 @@ app.post("/notes", (request, response) => {
   response.status(201).json(note);
 });
 
-// Add DELETE /notes/:id here.
+app.delete("/notes/:id", (request, response) => {
+  const noteId = Number(request.params.id);
+  const existingNote = notes.find((note) => note.id === noteId);
+
+  if (!existingNote) {
+    response.status(404).json({ error: "note not found" });
+    return;
+  }
+
+  notes = notes.filter((note) => note.id !== noteId);
+  response.status(204).end();
+});
 
 app.listen(port, () => {
   console.log(`Agent task API listening on http://localhost:${port}`);
