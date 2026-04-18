@@ -31,7 +31,9 @@ app.post("/notes", (request, response) => {
   response.status(201).json(note);
 });
 
-// Add DELETE /notes/:id here.
+// Which existing route style should the delete route match?
+// Where does the id come from?
+// What should happen when the note is missing, and what should happen when it is found?
 
 app.listen(port, () => {
   console.log(`Agent task API listening on http://localhost:${port}`);
